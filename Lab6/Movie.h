@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -37,6 +39,7 @@ public:
 	int getRottenTomatoesScore();
 	double getWorldwideGross();
 	string getYear();
+	int* extractCSV();
 
 
 };
