@@ -21,33 +21,33 @@ Movie::Movie(
 }
 
 string Movie::getFilm() {
-
+	return this->film;
 }
 
 string Movie::getGenre() {
-
+	return this->genre;
 }
 
 string Movie::getStudio() {
-
+	return this->studio;
 }
 
 int Movie::getAudienceScore() {
-
+	return this->audienceScore;
 }
 
 float Movie::getProfitability() {
-
+	return this->profitability;
 }
 
 int Movie::getRottenTomatoesScore() {
-
+	return this->rottenTomatoesScore;
 }
 
 double Movie::getWorldwideGross() {
-
+	return this->worldwideGross;
 }
 
 string Movie::getYear() {
-
+	return this->year;
 }
