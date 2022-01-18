@@ -2,5 +2,6 @@
 #include <array>
 
 int main() {
-	array<Movie, 78>{};
+	Movie m;
+	m.extractCSV();
 }

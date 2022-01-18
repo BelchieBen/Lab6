@@ -58,6 +58,8 @@ int* Movie::extractCSV() {
 	vector<string>row;
 	string line, word;
 
+	vector<Movie> container;
+
 	fstream file(filename, ios::in);
 	if (file.is_open()) {
 		while (getline(file, line)) {
@@ -67,17 +69,40 @@ int* Movie::extractCSV() {
 			while (getline(str, word, ','))
 				row.push_back(word);
 			content.push_back(row);
+
+			int aud;
+			int tom;
+			int gross;
+			float prof;
+			stringstream convert;
+
+			convert << row[3];
+			convert >> aud;
+
+			convert << row[5];
+			convert >> tom;
+
+			convert << row[6];
+			convert >> gross;
+
+			convert << row[4];
+			convert >> prof;
+
+			Movie m = Movie();
+			m.film = row[0];
+			m.genre = row[1];
+			m.studio = row[2];
+			m.audienceScore = aud;
+			m.profitability = prof;
+			m.rottenTomatoesScore = tom;
+			m.worldwideGross = gross;
+			m.year = row[7];
+
+			container.push_back(m);
 		}
 	}
 	else
 		cout << "Error opening the file\n";
-
-	for (int i = 0; i < content.size(); i++) {
-		for (int j = 0; j < content[i].size(); j++) {
-			cout << content[i][j] << " ";
-		}
-		cout << "\n";
-	}
 
 	return 0;
 
